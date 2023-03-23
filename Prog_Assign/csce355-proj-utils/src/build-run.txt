@@ -1,0 +1,5 @@
+Build:
+  g++ my_task_master.cc
+  mv a.out my_task_master
+Run:
+  ./my_task_master

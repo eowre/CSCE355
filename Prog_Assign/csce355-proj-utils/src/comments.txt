@@ -1,0 +1,93 @@
+Comments for self-test -------- Thu Apr 29, 2021 at 21:47:28 EDT
+parsing the build-run.txt file ... done
+
+building executable ...
+  g++ my_task_master.cc
+    succeeded
+  mv a.out my_task_master
+    succeeded
+ done
+    base command is "./my_task_master"
+
+Creating the file input-postfix.txt using the command
+    /home/eowre/Documents/CSCE355/Prog_Assign/csce355-proj-utils/bin/in2post < /home/eowre/Documents/CSCE355/Prog_Assign/test/input.txt > /home/eowre/Documents/CSCE355/Prog_Assign/test/input-postfix.txt
+    done
+
+testing arg --no-op ...
+  Running the command:
+  (./my_task_master --no-op | /home/eowre/Documents/CSCE355/Prog_Assign/csce355-proj-utils/bin/pre2in) < /home/eowre/Documents/CSCE355/Prog_Assign/test/input-postfix.txt > test-outputs/no-op.txt 2> test-outputs/no-op-err.txt
+Output base name: no-op
+    (terminated with zero status (status ignored))
+  standard error output:
+vvvvv
+Segmentation fault (core dumped)
+^^^^^
+  test-outputs/no-op.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  outcomes match (correct)
+done
+
+testing arg --empty ...
+  Running the command:
+  ./my_task_master --empty < /home/eowre/Documents/CSCE355/Prog_Assign/test/input-postfix.txt > test-outputs/empty.txt 2> test-outputs/empty-err.txt
+Output base name: empty
+    (terminated with nonzero status (status ignored))
+  standard error output:
+vvvvv
+Segmentation fault (core dumped)
+^^^^^
+  test-outputs/empty.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  outcomes match (correct)
+done
+
+testing arg --has-epsilon ...
+  Running the command:
+  ./my_task_master --has-epsilon < /home/eowre/Documents/CSCE355/Prog_Assign/test/input-postfix.txt > test-outputs/has-epsilon.txt 2> test-outputs/has-epsilon-err.txt
+Output base name: has-epsilon
+    (terminated with nonzero status (status ignored))
+  standard error output:
+vvvvv
+Segmentation fault (core dumped)
+^^^^^
+  test-outputs/has-epsilon.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  outcomes match (correct)
+done
+
+testing arg --has-nonepsilon ...
+  Running the command:
+  ./my_task_master --has-nonepsilon < /home/eowre/Documents/CSCE355/Prog_Assign/test/input-postfix.txt > test-outputs/has-nonepsilon.txt 2> test-outputs/has-nonepsilon-err.txt
+Output base name: has-nonepsilon
+    (terminated with nonzero status (status ignored))
+  standard error output:
+vvvvv
+Segmentation fault (core dumped)
+^^^^^
+  test-outputs/has-nonepsilon.txt exists---comparing with solution
+Running "diff" on your output and the solution:
+  OUTCOMES DIFFER:
+vvvvv
+27c27
+< no
+---
+> yes
+58a59
+> yes
+60,61c61
+< no
+< no
+---
+> yes
+^^^^^
+done
+
+######################################################
+Summary for self-test:
+
+no-op:     40 points
+empty:     5 points
+has-epsilon:     5 points
+has-nonepsilon:     0 points
+TOTAL POINTS: 50/100
+######################################################

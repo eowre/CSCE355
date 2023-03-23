@@ -1,0 +1,5 @@
+comments.txt exists -- making backup comments.bak
+
+Done.
+Comments are in /home/eowre/Documents/CSCE355/Prog_Assign/csce355-proj-utils/src/comments.txt
+
